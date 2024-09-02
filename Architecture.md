@@ -18,7 +18,7 @@ The tool splits the conversion process into six discrete steps, which are, whene
 
 All of these steps are encapsulated and run by `ObjectiveC2SwiftRewriter` within the frontend's main target.
 
-An overview of the steps taken is described bellow.
+An overview of the steps taken is described below.
 
 ---
 ## 1. Source lang parsing

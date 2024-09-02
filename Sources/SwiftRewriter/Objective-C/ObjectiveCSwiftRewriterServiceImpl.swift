@@ -65,7 +65,7 @@ public final class ObjectiveCSwiftRewriterServiceImpl: ObjectiveCSwiftRewriterSe
         
         if !results.succeeded {
             print("One or more errors where found while transpiling the input source code.")
-            print("See bellow for more information.")
+            print("See below for more information.")
         }
         
         // Print diagnostics

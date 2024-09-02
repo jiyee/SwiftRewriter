@@ -1164,7 +1164,7 @@ private class MemberInvocationResolver {
         functionCall: inout FunctionCallPostfix
     ) -> Bool {
         
-        // TODO: Reduce duplication between the two branches bellow
+        // TODO: Reduce duplication between the two branches below
 
         // Parameterless type constructor on type metadata (i.e. `MyClass.init([params])`)
         if

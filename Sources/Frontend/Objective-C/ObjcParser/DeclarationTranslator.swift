@@ -32,7 +32,7 @@ public class DeclarationTranslator {
         var result: ASTNodeDeclaration?
         let partialType = PartialType(decl.specifiers, pointer: decl.pointer)
 
-        // TODO: Reduce duplication with `declaration` and `translateObjectiveCType` methods bellow
+        // TODO: Reduce duplication with `declaration` and `translateObjectiveCType` methods below
 
         /// Recursively unwraps nested declarators into root declaration kinds.
         func _applyDeclarator(

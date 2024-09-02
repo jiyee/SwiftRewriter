@@ -36,7 +36,7 @@ public class DefinitionTypePropagator {
     ) -> [SwiftType?] {
 
         // TODO: Reduce duplication with propagate(_ functionBody: FunctionBodyIntention)
-        // TODO: bellow
+        // TODO: below
 
         var result: [SwiftType?] = functionIntention.parameters.map { _ in nil }
 

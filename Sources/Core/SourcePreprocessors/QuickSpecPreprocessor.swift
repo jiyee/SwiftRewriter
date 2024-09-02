@@ -5,7 +5,7 @@ import MiniLexer
 public class QuickSpecPreprocessor: SourcePreprocessor {
     /// Lexer rule that matches class identifiers.
     ///
-    /// Reads as a formal grammar that is roughly like the one bellow:
+    /// Reads as a formal grammar that is roughly like the one below:
     ///
     /// ```
     /// identifierLexer:

@@ -94,7 +94,7 @@ $ swift run -c=release SwiftRewriter files --colorize --target stdout /path/to/M
 $ swift run -c=release SwiftRewriter path /path/to/project/
 ```
 
-- Run `swift run SwiftRewriter --help` to print the full reference of command line arguments SwiftRewriter accepts. Reference also available bellow (for `path` subcommand):
+- Run `swift run SwiftRewriter --help` to print the full reference of command line arguments SwiftRewriter accepts. Reference also available below (for `path` subcommand):
 
 Usage:
 

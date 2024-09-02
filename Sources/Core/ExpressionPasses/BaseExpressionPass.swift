@@ -74,7 +74,7 @@ public class BaseExpressionPass: ASTRewriterPass {
     }
     
     func addCompoundedType(_ compoundedType: CompoundedMappingType) {
-        let typeSystem = self.typeSystem // To avoid capturing 'self' bellow
+        let typeSystem = self.typeSystem // To avoid capturing 'self' below
         
         let instanceExpressionMatcher =
                 ValueMatcher()
