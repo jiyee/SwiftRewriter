@@ -395,6 +395,8 @@ let package = Package(
             targets: ["SwiftRewriter"]),
     ],
     dependencies: [
+        .package(url: "https://github.com/swiftlang/swift-docc-plugin", from: "1.1.0"),
+
         .package(url: "https://github.com/apple/swift-argument-parser.git", from: "1.3.0"),
         .package(url: "https://github.com/LuizZak/antlr4-swift.git", exact: "4.1.2"),
         .package(url: "https://github.com/LuizZak/console.git", exact:  "0.8.2"),
@@ -435,10 +437,8 @@ let package = Package(
             dependencies: [
                 .product(name: "Console", package: "console"),
                 .product(name: "ArgumentParser", package: "swift-argument-parser"),
-                .product(name: "SwiftAST", package: "SwiftAST"),
                 "SwiftRewriterLib",
-                "ExpressionPasses", "Utils", "SourcePreprocessors",
-                "IntentionPasses", "MiniLexer", "Commons",
+                "Utils",
             ],
             path: "Sources/SwiftRewriterCLI"
         ),

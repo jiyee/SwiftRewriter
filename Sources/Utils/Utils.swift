@@ -28,8 +28,7 @@ extension Set {
 }
 
 extension Sequence {
-    /// Returns `true` iff any elements from this sequence pass a given predicate.
-    /// Returns `false` if sequence is empty.
+    /// Returns `true` if any elements from this sequence pass a given predicate.
     @inlinable
     public func any(_ predicate: (Element) -> Bool) -> Bool {
         for element in self {
@@ -37,7 +36,7 @@ extension Sequence {
                 return true
             }
         }
-        
+
         return false
     }
 }

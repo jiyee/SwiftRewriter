@@ -20,7 +20,6 @@ public struct KnownAttribute: Codable, Hashable {
         parameters: String? = nil,
         declaration: Declaration = .any
     ) {
-
         self.name = name
         self.parameters = parameters
         self.declaration = declaration
@@ -28,6 +27,7 @@ public struct KnownAttribute: Codable, Hashable {
 
     /// Specifies the kind of declarations that can be decorated with a known
     /// attribute.
+    // OptionSet 协议，可以使用数组组合多个选项，允许创建一个类似于集合的类型，可以包含多个选项；
     public struct Declaration: OptionSet, Hashable, Codable {
         public var rawValue: UInt
 
@@ -78,7 +78,7 @@ public extension KnownAttribute.Declaration {
     static let variable: Self = Self(rawValue: 0b1 << 5)
 
     /// Attribute can decorate subscripts.
-    static let `subscript`: Self = [Self(rawValue: 0b1 << 6), memberFlag]
+    static let `subscript`: Self = [Self(rawValue: 0b1 << 6), memberFlag] // 这里由于 OptionSet 协议，允许赋值数组结构
 
     /// Attribute can decorate member methods.
     static let method: Self = [Self(rawValue: 0b1 << 7), memberFlag]

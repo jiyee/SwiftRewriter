@@ -21,7 +21,6 @@ public class CompoundedMappingType {
         semantics: Set<Semantic> = [],
         aliases: [String] = []
     ) {
-        
         self.knownType = knownType
         self.transformations = transformations
         self.semantics = semantics

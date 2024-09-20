@@ -19,7 +19,7 @@ public class ObjectiveC2SwiftRewriterJob {
     public var settings: ObjectiveC2SwiftRewriter.Settings = .default
     public var swiftSyntaxOptions: SwiftSyntaxOptions = .default
     public var parserCache: ObjectiveCParserCache?
-    
+
     public init(
         input: InputSourcesProvider,
         intentionPassesSource: IntentionPassSource?,
@@ -42,17 +42,17 @@ public class ObjectiveC2SwiftRewriterJob {
         self.swiftSyntaxOptions = swiftSyntaxOptions
         self.parserCache = parserCache
     }
-    
+
     /// Executes a transpilation job, returning the result of the operation.
     @discardableResult
     public func execute(output: WriterOutput) -> ObjectiveCSwiftRewriterJobResult {
         let swiftRewriter = makeSwiftRewriter(output: output)
-        
+
         var jobResult = ObjectiveCSwiftRewriterJobResult(succeeded: false, diagnostics: Diagnostics())
-        
+
         do {
             try swiftRewriter.rewrite()
-            
+
             if !swiftRewriter.diagnostics.errors.isEmpty {
                 jobResult.diagnostics.merge(with: swiftRewriter.diagnostics)
             } else {
@@ -61,25 +61,25 @@ public class ObjectiveC2SwiftRewriterJob {
         } catch {
             jobResult.diagnostics.error("\(error)", location: .invalid)
         }
-        
+
         return jobResult
     }
-    
+
     func makeSwiftRewriter(output: WriterOutput) -> ObjectiveC2SwiftRewriter {
         let rewriter = ObjectiveC2SwiftRewriter(
             input: input,
             output: output,
-            intentionPassesSource: intentionPassesSource,
+            intentionPassesSources: intentionPassesSource,
             astRewriterPassSources: astRewriterPassSources,
             globalsProvidersSource: globalsProvidersSource,
             syntaxRewriterPassSource: syntaxRewriterPassSource,
             settings: settings
         )
-        
+
         rewriter.writerOptions = swiftSyntaxOptions
         rewriter.preprocessors = preprocessors
         rewriter.parserCache = parserCache
-        
+
         return rewriter
     }
 }
@@ -90,7 +90,7 @@ public struct ObjectiveCSwiftRewriterJobResult {
     public var succeeded: Bool
     /// Diagnostics engine that collected messages during transpilation.
     public var diagnostics: Diagnostics
-    
+
     init(succeeded: Bool, diagnostics: Diagnostics) {
         self.succeeded = succeeded
         self.diagnostics = diagnostics

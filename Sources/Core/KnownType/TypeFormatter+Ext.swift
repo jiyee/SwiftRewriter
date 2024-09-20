@@ -1,6 +1,7 @@
 import SwiftAST
 import WriterTargetOutput
 
+//NOTE: - 这个工具类放在这里，感觉怪怪的
 /// Helper functions for generating friendly textual representations of types,
 /// methods and other constructs.
 public extension TypeFormatter {
@@ -253,6 +254,7 @@ public extension TypeFormatter {
         return result
     }
     
+    //NOTE: - 局部变量
     /// Generates a string representation of a given field's signature, with
     /// type name, field name and field type.
     static func asString(

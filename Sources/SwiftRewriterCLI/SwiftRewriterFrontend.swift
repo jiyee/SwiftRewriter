@@ -9,9 +9,8 @@ public protocol SwiftRewriterFrontend {
     /// Requests that a set of files be collected from a given directory.
     func collectFiles(from directory: URL, fileProvider: FileProvider, options: SwiftRewriterFrontendFileCollectionOptions) throws -> [DiskInputFile]
 
-    /// Requests that a `SwiftRewriterService` be instantiated for rewriting
-    /// requests.
-    func makeRewriterService() -> SwiftRewriterService
+    /// Requests that a `SwiftRewriterService` be instantiated for rewriting requests.
+    func makeRewriterService() -> SwiftRewriterService // naming?
 }
 
 public struct SwiftRewriterFrontendFileCollectionOptions {

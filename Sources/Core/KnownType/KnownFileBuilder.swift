@@ -1,6 +1,7 @@
 import Foundation
 import SwiftAST
 
+// 采用 Builder 设计模式，完成 KnownFile 构造
 public struct KnownFileBuilder {
     public typealias TypeBuildCallback = (KnownTypeBuilder) -> KnownTypeBuilder
     

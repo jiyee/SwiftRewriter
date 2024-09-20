@@ -453,6 +453,7 @@ public struct KnownTypeBuilder {
     }
     
     /// Adds a strong field with no attributes with a given name and type
+    //TODO: - 什么是 field value？
     public func field(
         named name: String,
         type: SwiftType,
@@ -591,8 +592,8 @@ public struct KnownTypeBuilder {
     
     public func protocolConformances(protocolNames: [String]) -> KnownTypeBuilder {
         var result = self
-        for prot in protocolNames {
-            result = result.protocolConformance(protocolName: prot)
+        for protocolName in protocolNames {
+            result = result.protocolConformance(protocolName: protocolName)
         }
         
         return result
@@ -735,7 +736,7 @@ extension KnownTypeBuilder {
     
     /// Returns a reference to the latest method added to this `KnownTypeBuilder`
     /// via a `.method(...)` call
-    public var latestMethod: KnownMethod? {
+    public var lastMethod: KnownMethod? {
         type.methods.last
     }
     

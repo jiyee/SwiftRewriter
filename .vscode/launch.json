@@ -1,0 +1,28 @@
+{
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "sourceLanguages": [
+                "swift"
+            ],
+            "args": [],
+            "cwd": "${workspaceFolder:SwiftRewriter}",
+            "name": "Debug SwiftRewriter",
+            "program": "${workspaceFolder:SwiftRewriter}/.build/debug/SwiftRewriter",
+            "preLaunchTask": "swift: Build Debug SwiftRewriter"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "sourceLanguages": [
+                "swift"
+            ],
+            "args": [],
+            "cwd": "${workspaceFolder:SwiftRewriter}",
+            "name": "Release SwiftRewriter",
+            "program": "${workspaceFolder:SwiftRewriter}/.build/release/SwiftRewriter",
+            "preLaunchTask": "swift: Build Release SwiftRewriter"
+        }
+    ]
+}

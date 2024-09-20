@@ -97,12 +97,8 @@
 	},
 	"folders": [
 		{
-            "name": "SwiftRewriter",
+			"name": "SwiftRewriter",
 			"path": ".",
-		},
-		{
-			"name": "GrammarTransformer",
-			"path": "AntlrGrammars/GrammarTransformer",
 		},
 		{
 			"name": "Swift Package Dependencies",
@@ -193,12 +189,12 @@
                 "scope": "file",
             },
         },
-		
+
 		"flake8.args": ["--ignore=E203,E225,E302,E501,W293,W503"],
 		"[python]": {
 			"editor.formatOnSave": true
 		},
-		
+
 		// Hack to disable mypy from looking into every workspace folder by default.
 		// Main workspace folder has a .vscode/settings.json that overrides this.
 		"mypy.targets": [
@@ -258,12 +254,18 @@
 		],
 		"swiftTestFileGen.gotoTestFile.useFilenameHeuristics": true,
 		"swiftTestFileGen.gotoTestFile.heuristicFilenamePattern": "$1Tests",
+		"editor.accessibilityPageSize": 10,
+		"editor.fontFamily": "Hack, Menlo, Monaco, 'Courier New', monospace",
+		"editor.fontSize": 13,
+		"commentAnchors.tagHighlights.enabled": true,
+		"simpleBrowser.focusLockIndicator.enabled": false,
+		"workbench.colorTheme": "Anysphere",
+		"js/ts.implicitProjectConfig.strictFunctionTypes": false,
+		"js/ts.implicitProjectConfig.strictNullChecks": false,
+		"editor.inlayHints.enabled": "offUnlessPressed",
 	},
 	"extensions": {
 		"recommendations": [
-			"exodiusstudios.comment-anchors",
-			"vknabel.swift-coverage",
-			"luizzak.swifttestfilegen",
 		],
 	},
 }
